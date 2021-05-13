@@ -5,29 +5,29 @@
 class Gwsm < Formula
   desc "A set of commands to audit AWS usage to identify cost savings and security issues."
   homepage "https://goodwaygroup.github.io/gwsm/"
-  version "1.1.3"
+  version "1.1.4"
   license "MIT"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/GoodwayGroup/gwsm/releases/download/v1.1.3/gwsm_1.1.3_darwin_amd64.tar.gz"
-    sha256 "0123c0b3a105689012f896fdc6749510ed715c029f8b686169e48e8e0cf6653b"
+    url "https://github.com/GoodwayGroup/gwsm/releases/download/v1.1.4/gwsm_1.1.4_darwin_amd64.tar.gz"
+    sha256 "aaff575edb10e5f086ceacb6bb80662a67aaa2cf6ea963742ab2724aebd2a80e"
   end
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/GoodwayGroup/gwsm/releases/download/v1.1.3/gwsm_1.1.3_darwin_arm64.tar.gz"
-    sha256 "a9660a4fcf3fb0fbaa07dc1533b17826eecce05724c62bf9639d121727ad4689"
+    url "https://github.com/GoodwayGroup/gwsm/releases/download/v1.1.4/gwsm_1.1.4_darwin_arm64.tar.gz"
+    sha256 "bf89140333d04f55d2a4b7ce22308182359d0e705c9a5d7793f5c24d7e09cee2"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/GoodwayGroup/gwsm/releases/download/v1.1.3/gwsm_1.1.3_linux_amd64.tar.gz"
-    sha256 "a7639d106d01ccb4ba854986292d8272b40258df62a2b6a7271202954f091257"
+    url "https://github.com/GoodwayGroup/gwsm/releases/download/v1.1.4/gwsm_1.1.4_linux_amd64.tar.gz"
+    sha256 "540d558b47fb070e950c2c27e33a90c04d9dcdf88a5b7b6a23bbc21632b8e534"
   end
   if OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-    url "https://github.com/GoodwayGroup/gwsm/releases/download/v1.1.3/gwsm_1.1.3_linux_armv6.tar.gz"
-    sha256 "f1d3cd6a375beda0d1cbe7c6d9aadc933b6f2086192e62cfc74871d9f7b7cc2b"
+    url "https://github.com/GoodwayGroup/gwsm/releases/download/v1.1.4/gwsm_1.1.4_linux_armv6.tar.gz"
+    sha256 "4f13adc0aaeaf354b129c0fdac3cd18ab3059234ae8cf1a126d36e723edd5414"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/GoodwayGroup/gwsm/releases/download/v1.1.3/gwsm_1.1.3_linux_arm64.tar.gz"
-    sha256 "56b67447fafae44d9622236ba4a3ede8ea9da7ff0211fa11bc1501d59c002ef3"
+    url "https://github.com/GoodwayGroup/gwsm/releases/download/v1.1.4/gwsm_1.1.4_linux_arm64.tar.gz"
+    sha256 "81024826bd5ed0be0da8d919b02a8864b47bf6cd247d11bde7816382dfe1626f"
   end
 
   def install
