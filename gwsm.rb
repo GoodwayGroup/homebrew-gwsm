@@ -5,29 +5,34 @@
 class Gwsm < Formula
   desc "A set of commands to audit AWS usage to identify cost savings and security issues."
   homepage "https://goodwaygroup.github.io/gwsm/"
-  version "1.1.4"
+  version "1.1.5"
   license "MIT"
   bottle :unneeded
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/GoodwayGroup/gwsm/releases/download/v1.1.4/gwsm_1.1.4_darwin_amd64.tar.gz"
-    sha256 "aaff575edb10e5f086ceacb6bb80662a67aaa2cf6ea963742ab2724aebd2a80e"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/GoodwayGroup/gwsm/releases/download/v1.1.5/gwsm_1.1.5_darwin_amd64.tar.gz"
+      sha256 "a21616774af233919f6a846a78305de0efb86bde86f456b8d79e8a371738a85c"
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/GoodwayGroup/gwsm/releases/download/v1.1.5/gwsm_1.1.5_darwin_arm64.tar.gz"
+      sha256 "680c939fda33d4fd77f1cd7c71169ef6724bc80092d248143c69353e07d272c7"
+    end
   end
-  if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/GoodwayGroup/gwsm/releases/download/v1.1.4/gwsm_1.1.4_darwin_arm64.tar.gz"
-    sha256 "bf89140333d04f55d2a4b7ce22308182359d0e705c9a5d7793f5c24d7e09cee2"
-  end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/GoodwayGroup/gwsm/releases/download/v1.1.4/gwsm_1.1.4_linux_amd64.tar.gz"
-    sha256 "540d558b47fb070e950c2c27e33a90c04d9dcdf88a5b7b6a23bbc21632b8e534"
-  end
-  if OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-    url "https://github.com/GoodwayGroup/gwsm/releases/download/v1.1.4/gwsm_1.1.4_linux_armv6.tar.gz"
-    sha256 "4f13adc0aaeaf354b129c0fdac3cd18ab3059234ae8cf1a126d36e723edd5414"
-  end
-  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/GoodwayGroup/gwsm/releases/download/v1.1.4/gwsm_1.1.4_linux_arm64.tar.gz"
-    sha256 "81024826bd5ed0be0da8d919b02a8864b47bf6cd247d11bde7816382dfe1626f"
+
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/GoodwayGroup/gwsm/releases/download/v1.1.5/gwsm_1.1.5_linux_amd64.tar.gz"
+      sha256 "bad1dc7434839149be5a3296815f6f07e512c33a8f1f0da3d95cfca3f2a2bc1e"
+    end
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/GoodwayGroup/gwsm/releases/download/v1.1.5/gwsm_1.1.5_linux_armv6.tar.gz"
+      sha256 "fcef48349635ed059bbe3811342bd6ea392fb70b6c3de645431be217fea86a6b"
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/GoodwayGroup/gwsm/releases/download/v1.1.5/gwsm_1.1.5_linux_arm64.tar.gz"
+      sha256 "19459461ab650efe1a92eaa5bd4f2d962f5391c73cb8d5dd45f888d669eefda0"
+    end
   end
 
   def install
